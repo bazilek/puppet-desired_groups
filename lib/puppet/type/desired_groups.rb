@@ -3,10 +3,6 @@ Puppet::Type.newtype(:desired_groups) do
 
     desc "Adding user only to existing unix groups. Desired groups passed as parameter."
 
-    validate do
-        fail('Groups parameter is required.') if self[:groups].nil?
-    end
-
     autorequire(:user) do
         self[:name]
     end
