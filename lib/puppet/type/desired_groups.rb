@@ -23,6 +23,15 @@ Puppet::Type.newtype(:desired_groups) do
             newvalue.compact.join(',')
         end
 
+        # override insync? method to skip empty groups
+        def insync?(is)
+          return false unless is.is_a? Array
+          @should = @should.compact
+          return false unless is.length == @should.length
+          return (is == @should or is == @should.map(&:to_s))
+        end
+
+
         # helper method
         def get_existing_groups
             groups = []

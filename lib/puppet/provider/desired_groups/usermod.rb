@@ -27,12 +27,9 @@ Puppet::Type.type(:desired_groups).provide(:usermod) do
         current_groups = get_user_groups(user)
         groups = []
 
-        # adding nil items to comply with user data
         desired_groups.each {|dg|
             if current_groups.include? dg
                 groups << dg
-            else
-                groups << nil
             end
         }
 
