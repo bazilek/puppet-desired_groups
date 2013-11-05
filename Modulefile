@@ -1,4 +1,4 @@
-name    'bazil-desired_groups'
+name    'bazilek-desired_groups'
 version '1.0.0'
 author 'Vasil Mikhalenya <bazilek@gmail.com>'
 license 'GPLv3'
