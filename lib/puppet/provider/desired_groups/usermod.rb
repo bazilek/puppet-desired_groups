@@ -2,8 +2,8 @@ Puppet::Type.type(:desired_groups).provide(:usermod) do
 
     desc "Manage user's groups via usermod"
 
-    confine :kernel => :Linux
-    defaultfor :kernel => :Linux
+    confine :kernel => [ :Linux, :SunOS ]
+    defaultfor :kernel => [ :Linux, :SunOS ]
 
     commands :usermod => "/usr/sbin/usermod"
 
@@ -45,8 +45,13 @@ Puppet::Type.type(:desired_groups).provide(:usermod) do
 
         # need compact to remove nil items
         groups = values.compact
+        params = [ '-G',groups.join(','),user ]
 
-        usermod('-a','-G',groups.join(','),user)
+        if Facter.value(:kernel) == 'Linux'
+            params.unshift('-a')
+        end
+
+        usermod(params)
     end
 
 end
