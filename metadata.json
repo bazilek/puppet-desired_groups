@@ -1,0 +1,39 @@
+{
+  "name": "bazilek-desired_groups"
+  "version": "1.0.0",
+  "author": "Vasil Mikhalenya <bazilek@gmail.com>"
+  "summary": "Manage unix user's group membership in 'safe way'"
+  "license": "GPL-3.0",
+  "source": "https://github.com/bazilek/puppet-desired_groups"
+  "project_page": "https://github.com/bazilek/puppet-desired_groups"
+  "issues_url": "https://github.com/bazilek/puppet-desired_groups/issues"
+  "dependencies": [
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+    },
+    {
+      "operatingsystem": "Ubuntu"
+    },
+    {
+      "operatingsystem": "OpenBSD"
+    },
+    {
+      "operatingsystem": "SunOS"
+    },
+    {
+      "operatingsystem": "FreeBSD"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=4.0.0 < 7.0.0"
+    }
+  ],
+  "tags": [
+    "group",
+    "user",
+  ],
+}

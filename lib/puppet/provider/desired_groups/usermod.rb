@@ -2,8 +2,8 @@ Puppet::Type.type(:desired_groups).provide(:usermod) do
 
     desc "Manage user's groups via usermod"
 
-    confine :kernel => [ :Linux, :SunOS ]
-    defaultfor :kernel => [ :Linux, :SunOS ]
+    confine :kernel => [ :Linux, :SunOS, :OpenBSD ]
+    defaultfor :kernel => [ :Linux, :SunOS, :OpenBSD ]
 
     commands :usermod => "/usr/sbin/usermod"
 
