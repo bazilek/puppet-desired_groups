@@ -1,7 +1,0 @@
-name    'bazilek-desired_groups'
-version '1.0.0'
-author 'Vasil Mikhalenya <bazilek@gmail.com>'
-license 'GPLv3'
-summary 'Manage unix user\'s group membership in "safe way"'
-description 'Custom type desired_groups allows you declare desired list of groups i.e. adding user to group only if group exists on host'
-project_page 'https://github.com/bazilek/puppet-desired_groups/'
